@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="wstyle.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnGetWeather').click(function () {
+                var result = $('#resultDiv');
+                var requestData = $('#txtCity').val();
+                $.ajax({
+                    url: 'http://api.openweathermap.org/data/2.5/weather?q='+ requestData+'&appid=27d43832d2a4adcb97fcbfa23db130aa',
+                    method: 'GET',
+                    success: function (response) {     
+                    var iconcode = response.weather[0].icon;
+                    var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+                    $('#wicon').attr('src', iconurl);
+                    var ctemp=Math.round(response.main.temp-270);
+                    result.html('Weather: ' + response.weather[0].main + '<br/>'+ 'Description: ' + response.weather[0].description+'</br>'+'Temperature:'+ctemp+'&#x2103;');
+                    }
+                });
+            });
+        });
+        
+    </script>
+</head>
+<body>
+    <div class="input_box">
+           <div class="caption"><p> Enter City Name</p></div>
+            <div class="text-box">
+            <span style="color:red; font-size:20px;"><input type="text" id="txtCity" /></span>
+            </div>
+            <div class="search-btn"><button type="button" class="btn btn-primary" id="btnGetWeather" >SEARCH</button></div>
+    </div>
+    <div class="wimg"><img id="wicon" src=""></div>
+    <div id="resultDiv">           
+    </div>
+</body>
+</html>

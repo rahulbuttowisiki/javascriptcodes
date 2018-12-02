@@ -1,0 +1,53 @@
+#chill{
+   width:100px;
+   height: auto; 
+}
+body{
+  background-image: url("bg1.jpg");
+  /* background-color:lightgreen;*/
+   background-position:center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment:fixed;
+}
+.caption{
+   color: white;
+   font-family: 'Courier New', Courier, monospace;
+   text-align: center;
+}
+p{
+   font-size:20px;
+}
+.text-box{
+   text-align:center;
+}
+.search-btn{
+   text-align:center;
+
+}
+.input_box{
+   margin: 100px auto;
+   width:300px;
+   height:300px;
+   display:flex;
+   flex-direction: column;
+   justify-content:space-around;
+   background-color: black;
+   opacity: 0.8;
+   border-radius: 10px;
+   box-sizing: border-box;
+   box-shadow: 5px 5px 15px black;
+}
+#resultDiv{
+   font-family: 'Courier New', Courier, monospace;
+   text-align: center;
+   font-size: 50px;
+   color:white;
+}
+.wimg{
+   text-align: center;
+}
+img{
+   width:200px;
+   height:200px;
+}
