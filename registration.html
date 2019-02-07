@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+        <title>Registration Form</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+        <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+        <link rel="stylesheet" href="style.css">
+      </head>
+      
+      <body>
+            <div class="signup-form">
+            
+            <form>
+              
+            <h2>Register</h2>
+              
+            <p class="hint-text">Create your account. It's free and only takes a minute.</p>
+
+            <div class="form-group">
+              
+            <div class="row">
+                  <div class="col-xs-6"><input type="text" class="form-control" id="firstname" placeholder="First Name" ></div>
+                  <div class="col-xs-6"><input type="text" class="form-control" id="lastname" placeholder="Last Name" ></div>
+            </div>        	
+              
+            </div>
+              
+              <div class="form-group">
+                    <input type="email" class="form-control" id="email" placeholder="Email" required="required">
+              </div>
+                <div class="form-group">
+                <input type="radio" name="gender" value="male" checked> Male
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="female"> Female
+                </div>
+                <div class="form-group">
+                      <input type="password" class="form-control" id="password" placeholder="Password" required="required">
+              </div>
+              
+              <div class="form-group">
+                      <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" required="required">
+              </div>        
+                
+              <div class="form-group">
+                      <button type="button" class="btn btn-success btn-lg btn-block" onclick="addDetails()">Register Now</button>
+              </div>
+              
+            </form>
+
+            </div>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDPh72N4b6f0JRgKKlt8IO_gbswJxQCrkc",
+    authDomain: "registration-229ba.firebaseapp.com",
+    databaseURL: "https://registration-229ba.firebaseio.com",
+    projectId: "registration-229ba",
+    storageBucket: "registration-229ba.appspot.com",
+    messagingSenderId: "957667152955"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script src="regjs.js"></script>
+
+</body>
+
+</html>
